@@ -3,6 +3,7 @@
 set :format, :pretty
 set :bundle_roles, [:app, :work]
 set :bundle_flags, '--deployment --path=vendor/bundle'
+set :bundle_cmd, "/opt/ruby/2.4.0/bin/bundle"
 set :bundle_without, %w(development test doc).join(' ')
 set :application, 'curax'
 set :scm, :git
