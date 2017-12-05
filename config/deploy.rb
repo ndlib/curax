@@ -101,7 +101,7 @@ namespace :configuration do
   task :copy_secrets do
     on roles(:app) do
       within release_path do
-        execute "export PATH=/opt/ruby/current/bin:$PATH && cd #{release_path} && sh scripts/update_secrets.sh #{fetch(:secret_repo_name)}"
+        execute "export PATH=/opt/ruby/2.4.0/bin:$PATH && cd #{release_path} && sh scripts/update_secrets.sh #{fetch(:secret_repo_name)}"
       end
     end
   end
