@@ -107,7 +107,7 @@ namespace :configuration do
   end
 end
 
-before 'deploy:db_migrate', 'configuration:copy_secrets'
+#before 'deploy:db_migrate', 'configuration:copy_secrets'
 after 'deploy', 'deploy:db_migrate'
 before 'deploy:db_migrate', 'deploy:db_dump'
 after 'deploy:db_migrate', 'deploy:db_seed'
