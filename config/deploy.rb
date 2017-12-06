@@ -108,13 +108,13 @@ namespace :configuration do
 end
 
 before 'deploy:db_migrate', 'configuration:copy_secrets'
-# after 'deploy', 'deploy:db_migrate'
-# before 'deploy:db_migrate', 'deploy:db_dump'
-# after 'deploy:db_migrate', 'deploy:db_seed'
-# after 'deploy:db_migrate', 'deploy:data_migrate'
-# after 'deploy:db_migrate', 'deploy:precompile_assets'
-# after 'deploy', 'deploy:cleanup'
-# after 'deploy', 'deploy:restart'
+after 'deploy', 'deploy:db_migrate'
+before 'deploy:db_migrate', 'deploy:db_dump'
+after 'deploy:db_migrate', 'deploy:db_seed'
+after 'deploy:db_migrate', 'deploy:data_migrate'
+after 'deploy:db_migrate', 'deploy:precompile_assets'
+after 'deploy', 'deploy:cleanup'
+after 'deploy', 'deploy:restart'
 
 require './config/boot'
 require 'capistrano/console'
