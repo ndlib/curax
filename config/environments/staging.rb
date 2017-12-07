@@ -65,20 +65,20 @@ Rails.application.configure do
   config.i18n.fallbacks = true
 
   # ActionMailer Config
-  config.action_mailer.default_url_options = { protocol: Figaro.env.protocol, host:  Figaro.env.domain_name }
-  config.action_mailer.delivery_method = :sendmail
-  config.action_mailer.raise_delivery_errors = true
+  #config.action_mailer.default_url_options = { protocol: Figaro.env.protocol, host:  Figaro.env.domain_name }
+  #config.action_mailer.delivery_method = :sendmail
+  #config.action_mailer.raise_delivery_errors = true
   # Send email in development mode?
-  config.action_mailer.perform_deliveries = true
-  config.action_mailer.smtp_settings = {
-    address:              Figaro.env.smtp_host!,
-    port:                 Figaro.env.smtp_port!.to_i,
-    domain:               Figaro.env.smtp_domain!,
-    user_name:            Figaro.env.smtp_user_name!,
-    password:             Figaro.env.smtp_password,
-    authentication:       Figaro.env.smtp_authentication_type!,
-    enable_starttls_auto: true
-  }
+  #config.action_mailer.perform_deliveries = true
+  #config.action_mailer.smtp_settings = {
+  #  address:              Figaro.env.smtp_host!,
+  #  port:                 Figaro.env.smtp_port!.to_i,
+  #  domain:               Figaro.env.smtp_domain!,
+  #  user_name:            Figaro.env.smtp_user_name!,
+  #  password:             Figaro.env.smtp_password,
+  #  authentication:       Figaro.env.smtp_authentication_type!,
+  #  enable_starttls_auto: true
+  #}
 
   # Disable automatic flushing of the log to improve performance.
   # config.autoflush_log = false
