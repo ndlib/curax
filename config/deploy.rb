@@ -45,7 +45,8 @@ namespace :deploy do
     on roles(:app) do
       within release_path do
         with rails_env: fetch(:rails_env) do
-          execute :rake, 'db:data:migrate'
+          # another missing thing comment out (dltp-1172)
+          #execute :rake, 'db:data:migrate'
         end
       end
     end
