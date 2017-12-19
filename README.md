@@ -2,19 +2,56 @@
 
 [CurateND](https://curate.nd.edu) on [Hyrax](http://github.com/samvera/hyrax/). RAWR!
 
-## Getting Started (a work in progress)
+## Running Locally
 
-*Please note, these are incomplete notes but move things a bit further along.*
+1. Install Postres (assumes [Homebrew](https://brew.sh/))
 
-* Clone the repository (e.g. `git clone https://github.com/ndlib/curax.git`)
-* Run `bundle install`
-* Run `bundle exec rake db:create db:migrate`
-* Start up a Rails server
+    ```console
+    $ brew install postgres
+    ```
 
-### TODO
+2. Install Ruby 2.4.2 (required by .ruby-version file)
 
-* Containerize the various environments and document how to use those
-* How to connect to a SOLR instance
-* How to connect to a Fedora instance
-* You'll need to install postgresql (`brew install postgres`)
-  - Further details at [this website](https://www.moncefbelyamani.com/how-to-install-postgresql-on-a-mac-with-homebrew-and-lunchy/)
+    ```console
+    $ rbenv install 2.4.2
+    ```
+
+3. Install bundler
+
+    ```console
+    $ gem install bundler
+    ```
+
+4. Install bundled gems
+
+    ```console
+    $ bundle install
+    ```
+
+5. Create the Postgres database (if necessary):
+
+    ```console
+    $ bundle exec rake db:create
+    ```
+
+6. Ensure up to date database scheme:
+
+  - Start fresh (deleting all application database records)
+
+    ```console
+    $ bundle exec rake db:schema:load
+    ```
+
+  - Incremental update (preserving application database records)
+
+    ```console
+    $ bundle exec rake db:migrate
+    ```
+
+7. Start the Fedora and SOLR server; This will download both as needed.
+
+    ```console
+    $ bundle exec rake hydra:server
+    ```
+
+8. Open your favorite browser and go to http://localhost:3000
