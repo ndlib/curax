@@ -7,45 +7,51 @@
 1. Install Postres (assumes [Homebrew](https://brew.sh/))
 
     ```console
-    $ brew postgres
+    $ brew install postgres
     ```
 
-2. Install bundler
+2. Install Ruby 2.4.2 (required by .ruby-version file)
+
+    ```console
+    $ rbenv install 2.4.2
+    ```
+
+3. Install bundler
 
     ```console
     $ gem install bundler
     ```
 
-3. Install bundled gems
+4. Install bundled gems
 
     ```console
     $ bundle install
     ```
 
-4. Create the Postgres database (if necessary):
+5. Create the Postgres database (if necessary):
 
     ```console
     $ bundle exec rake db:create
     ```
 
-5. Ensure up to date database scheme:
+6. Ensure up to date database scheme:
 
   - Start fresh (deleting all application database records)
 
     ```console
-    $ bundle exec db:schema:load
+    $ bundle exec rake db:schema:load
     ```
 
   - Incremental update (preserving application database records)
 
     ```console
-    $ bundle exec db:migrate
+    $ bundle exec rake db:migrate
     ```
 
-6. Start the Fedora and SOLR server; This will download both as needed.
+7. Start the Fedora and SOLR server; This will download both as needed.
 
     ```console
     $ bundle exec rake hydra:server
     ```
 
-7. Open your favorite browser and go to http://localhost:3000
+8. Open your favorite browser and go to http://localhost:3000
