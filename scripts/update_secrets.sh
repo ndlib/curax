@@ -23,7 +23,7 @@ files_to_copy="
 	config/fedora.yml
 	config/redis.yml
 	config/role_map.yml
- 	onfig/secrets.yml
+	config/secrets.yml
 	config/solr.yml
 	config/solr_wrapper_test.yml
 	config/tinymce.yml
