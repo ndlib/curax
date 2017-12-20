@@ -9,6 +9,7 @@ end
 gem 'capistrano', '~> 3.5.0'
 gem 'capistrano-bundler'
 gem 'coffee-rails', '~> 4.2'
+gem 'figaro'
 gem 'jbuilder', '~> 2.5'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.7'

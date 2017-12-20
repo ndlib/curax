@@ -1,0 +1,71 @@
+# *****************************************************************************
+# *****************************************************************************
+# *****************************************************************************
+# *****************************************************************************
+# *****************************************************************************
+# *****************************************************************************
+#
+#
+# DEVELOPERS: Figaro allows for defining ENV variables that span Rails
+#             environments. Do not do this. For each Rails environment scope
+#             the ENV to that environment; And do not include other Rails
+#             environments in the Figaro definition.
+#
+#             In other words, when you are creating the secrets for the Staging
+#             Rails environment, do not include other Rails environments. To do
+#             so would mean for that installation that you could run the app
+#             in that Rails environment; I never want to allow runing the
+#             production app using the development Rails environment.
+#
+#             Also, do not include in this file sensitive information that
+#             could be leveraged in a WWW context.
+#
+# Unlike the standard Figaro implementations this configuration file is
+# checked into the repository. The allowed RAILS_ENVs are development and test.
+# Those environments are what developers run on their local installations. The
+# secrets that are included demonstrate how you would configure secrets for the
+# other environments.
+#
+# The applicatino's ENV variables first come from the ENV of the shell profile,
+# then any missing ENV variables are injected via the config/application.yml
+# file.
+#
+# See https://github.com/laserlemon/figaro for further details on usage
+#
+#
+# *****************************************************************************
+# *****************************************************************************
+# *****************************************************************************
+# *****************************************************************************
+# *****************************************************************************
+# *****************************************************************************
+
+development:
+  application_database_name: curax_development
+  application_database_host: localhost
+  blacklight_adapter: solr
+  cable_adapter: async
+  devise_secret_key: b7adb179eac5f12b64c17a94f53a5819488ad2e190bbac281880501e0a5e3076548ad9a7e689680f333864242ee893eb986f870b432601ca3f52da6e6e435f54
+  fedora_base_path: /dev
+  fedora_password: fedoraAdmin
+  fedora_url: http://127.0.0.1:8984/rest
+  fedora_username: fedoraAdmin
+  redis_host: localhost
+  redis_port: '6379'
+  secret_key_base: 30fe58c029e2f851db78db03cc60677ae46d582695b0db61a6e9d20a690aed94f4aad6428e756bcfe5ab85182e5474cef31140916587238c580456973e9c8684
+  solr_url: http://127.0.0.1:8983/solr/hydra-development
+
+test:
+  application_database_name: curax_test
+  application_database_host: localhost
+  blacklight_adapter: solr
+  cable_adapter: async
+  devise_secret_key: b7adb179eac5f12b64c17a94f53a5819488ad2e190bbac281880501e0a5e3076548ad9a7e689680f333864242ee893eb986f870b432601ca3f52da6e6e435f54
+  fedora_base_path: /dev
+  fedora_password: fedoraAdmin
+  fedora_url: http://127.0.0.1:8986/rest
+  fedora_username: fedoraAdmin
+  redis_host: localhost
+  redis_port: '6379'
+  secret_key_base: 30fe58c029e2f851db78db03cc60677ae46d582695b0db61a6e9d20a690aed94f4aad6428e756bcfe5ab85182e5474cef31140916587238c580456973e9c8684
+  solr_url: http://127.0.0.1:8985/solr/hydra-test
