@@ -17,17 +17,7 @@ git clone "git@git.library.nd.edu:$secret_repo"
 files_to_copy="
 	config/analytics.yml
 	config/application.yml
-	config/blacklight.yml
-	config/cable.yml
-	config/database.yml
-	config/fcrepo_wrapper_test.yml
-	config/fedora.yml
-	config/redis.yml
 	config/role_map.yml
-	config/secrets.yml
-	config/solr.yml
-	config/solr_wrapper_test.yml
-	config/tinymce.yml
     "
 
 for f in $files_to_copy; do

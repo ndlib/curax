@@ -4,6 +4,9 @@ development:
 test:
   adapter: <%= Figaro.env.cable_adapter %>
 
+staging:
+  adapter: <%= Figaro.env.cable_adapter %>
+
 # production:
 #   adapter: <%= Figaro.env.cable_adapter %>
 #   url: <%= Figaro.env.cable_adapter_url %>

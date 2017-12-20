@@ -4,3 +4,6 @@ development:
 test:
   host: <%= Figaro.env.redis_host %>
   port: <%= Figaro.env.redis_port.to_i %>
+staging:
+  host: <%= Figaro.env.redis_host %>
+  port: <%= Figaro.env.redis_port.to_i %>

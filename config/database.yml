@@ -21,9 +21,15 @@ default: &default
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   database: <%= Figaro.env.application_database_name! %>
+  host: <%= Figaro.env.application_database_host! %>
+<% if Figaro.env.application_database_username.present? %>  username: <%= Figaro.env.application_database_username %><% end %>
+<% if Figaro.env.application_database_password.present? %>  password: <%= Figaro.env.application_database_password %><% end %>
 
 development:
   <<: *default
 
 test:
+  <<: *default
+
+staging:
   <<: *default

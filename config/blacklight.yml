@@ -4,3 +4,6 @@ development:
 test:
   adapter: <%= Figaro.env.blacklight_adapter %>
   url: <%= Figaro.env.solr_url %>
+staging:
+  adapter: <%= Figaro.env.blacklight_adapter %>
+  url: <%= Figaro.env.solr_url %>

@@ -3,3 +3,5 @@ development:
   url: <%= Figaro.env.solr_url %>
 test:
   url: <%= Figaro.env.solr_url %>
+staging:
+  url: <%= Figaro.env.solr_url %>

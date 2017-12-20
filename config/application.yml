@@ -1,15 +1,30 @@
 # *****************************************************************************
-#
-# NOTE: Unlike the standard Figaro implementation this configuration file is
-# checked into the repository.
-#
-# As such only include "dummy values" or those values necessary for booting in
-# development mode.
-#
+# *****************************************************************************
+# *****************************************************************************
+# *****************************************************************************
+# *****************************************************************************
 # *****************************************************************************
 #
-# The purpose of the config/application.yml is to define additional ENV
-# variables that are injected into the Rails application.
+#
+# DEVELOPERS: Figaro allows for defining ENV variables that span Rails
+#             environments. Do not do this. For each Rails environment scope
+#             the ENV to that environment; And do not include other Rails
+#             environments in the Figaro definition.
+#
+#             In other words, when you are creating the secrets for the Staging
+#             Rails environment, do not include other Rails environments. To do
+#             so would mean for that installation that you could run the app
+#             in that Rails environment; I never want to allow runing the
+#             production app using the development Rails environment.
+#
+#             Also, do not include in this file sensitive information that
+#             could be leveraged in a WWW context.
+#
+# Unlike the standard Figaro implementations this configuration file is
+# checked into the repository. The allowed RAILS_ENVs are development and test.
+# Those environments are what developers run on their local installations. The
+# secrets that are included demonstrate how you would configure secrets for the
+# other environments.
 #
 # The applicatino's ENV variables first come from the ENV of the shell profile,
 # then any missing ENV variables are injected via the config/application.yml
@@ -17,21 +32,17 @@
 #
 # See https://github.com/laserlemon/figaro for further details on usage
 #
-# Add configuration values here, as shown below. Also add those keys to
-# config/initializers/figaro_required_env_variables.rb
 #
-# pusher_app_id: "2954"
-# pusher_key: 7381a978f7dd7f9a1117
-# pusher_secret: abdc3b896a0ffb85d373
-# stripe_api_key: sk_test_2J0l093xOyW72XUYJHE4Dv2r
-# stripe_publishable_key: pk_test_ro9jV5SNwGb1yYlQfzG17LHK
-#
-# production:
-#   stripe_api_key: sk_live_EeHnL644i6zo4Iyq4v1KdV9H
-#   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
+# *****************************************************************************
+# *****************************************************************************
+# *****************************************************************************
+# *****************************************************************************
+# *****************************************************************************
+# *****************************************************************************
 
 development:
   application_database_name: curax_development
+  application_database_host: localhost
   blacklight_adapter: solr
   cable_adapter: async
   devise_secret_key: b7adb179eac5f12b64c17a94f53a5819488ad2e190bbac281880501e0a5e3076548ad9a7e689680f333864242ee893eb986f870b432601ca3f52da6e6e435f54
@@ -46,6 +57,7 @@ development:
 
 test:
   application_database_name: curax_test
+  application_database_host: localhost
   blacklight_adapter: solr
   cable_adapter: async
   devise_secret_key: b7adb179eac5f12b64c17a94f53a5819488ad2e190bbac281880501e0a5e3076548ad9a7e689680f333864242ee893eb986f870b432601ca3f52da6e6e435f54

@@ -8,3 +8,8 @@ test:
   password: <%= Figaro.env.fedora_password %>
   url: <%= Figaro.env.fedora_url %>
   base_path: <%= Figaro.env.fedora_base_path %>
+staging:
+  user: <%= Figaro.env.fedora_username %>
+  password: <%= Figaro.env.fedora_password %>
+  url: <%= Figaro.env.fedora_url %>
+  base_path: <%= Figaro.env.fedora_base_path %>

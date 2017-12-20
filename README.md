@@ -14,6 +14,13 @@ There are two primary files for Figaro:
 **NOTE: These files are checked into the repository, so do not include any "live" values of sensitive nature (e.g. passwords).**
 You will need to add those values to the associated secrets repository. See [scripts/update_secrets.sh](./scripts/update_secrets.sh) for details on adding those secrets.
 
+When defining secrets for this repository (via [config/application.yml](./config/application.yml)):
+
+* You may commit "secret" keys for test and development. These keys will be world-wide visible, so consider the impact of them being known to the public.
+* For other environments (e.g. staging, production, etc), you can define those secrets in the respective secret storage.
+
+Many upstream dependencies create their configurations to have a top-level key of the RAILS_ENV. The assumption is that for each of the possible RAILS_ENV, we will add top-level keys to their associated YML file. See [config/blacklight.yml](./config/blacklight.yml) and [config/database.yml](./config/database.yml) for examples
+
 ## Running Locally
 
 1. Install Postres (assumes [Homebrew](https://brew.sh/))
