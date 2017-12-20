@@ -16,6 +16,7 @@ git clone "git@git.library.nd.edu:$secret_repo"
 
 files_to_copy="
 	config/analytics.yml
+	config/application.yml
 	config/blacklight.yml
 	config/cable.yml
 	config/database.yml

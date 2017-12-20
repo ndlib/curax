@@ -1,10 +1,10 @@
 development:
-  adapter: async
+  adapter: <%= Figaro.env.cable_adapter %>
 
 test:
-  adapter: async
+  adapter: <%= Figaro.env.cable_adapter %>
 
-production:
-  adapter: redis
-  url: redis://localhost:6379/1
-  channel_prefix: curax_production
+# production:
+#   adapter: <%= Figaro.env.cable_adapter %>
+#   url: <%= Figaro.env.cable_adapter_url %>
+#   channel_prefix: <%= Figaro.env.cable_adapter_channel_prefix %>
