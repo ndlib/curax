@@ -15,7 +15,6 @@ echo "=-=-=-=-=-=-=-= git clone $secret_repo"
 git clone "git@git.library.nd.edu:$secret_repo"
 
 files_to_copy="
-	config/analytics.yml
 	config/application.yml
 	config/role_map.yml
     "
