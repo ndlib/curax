@@ -67,10 +67,21 @@ Many upstream dependencies create their configurations to have a top-level key o
     $ bundle exec rake db:migrate
     ```
 
-7. Start the Fedora and SOLR server; This will download both as needed.
+7. Start the Fedora, SOLR, and Rails services; This will download Fedora and SOLR as needed.
 
     ```console
     $ bundle exec rake hydra:server
     ```
+    Optionally, you can separate the Fedora/Solr services from the rails service by adding:
+    ```console
+    $ SKIP_RAILS=true bundle exec rake hydra:server
+    ```
+    and in a different terminal:
+    ```console
+    $ bundle exec rails server
+    ```
+
 
 8. Open your favorite browser and go to http://localhost:3000
+
+9. To hit the rack miniprofiler go to http://localhost:3000/?pp=help, or click on the badge in the top left corner after rendering any page.
