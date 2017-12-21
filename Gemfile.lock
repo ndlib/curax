@@ -509,6 +509,8 @@ GEM
     rack (2.0.3)
     rack-cache (1.7.1)
       rack (>= 0.4)
+    rack-mini-profiler (0.10.7)
+      rack (>= 1.2.0)
     rack-protection (2.0.0)
       rack
     rack-test (0.8.2)
@@ -787,6 +789,7 @@ DEPENDENCIES
   pg (~> 0.18)
   puma (~> 3.7)
   rack-cache
+  rack-mini-profiler
   rails (~> 5.1.4)
   resque-pool
   rsolr (>= 1.0)
