@@ -109,7 +109,7 @@ namespace :configuration do
   end
 end
 
-after 'deploy:symlink:linked_dirs', 'configuration:copy_secrets'
+before 'bundler:install', 'configuration:copy_secrets'
 after 'deploy', 'deploy:db_migrate'
 after 'deploy:db_migrate', 'deploy:db_seed'
 after 'deploy:db_migrate', 'deploy:data_migrate'

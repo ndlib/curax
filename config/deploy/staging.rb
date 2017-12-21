@@ -21,5 +21,5 @@ set :domain,    fetch(:host, 'testlibnd-curax-dev.library.nd.edu')
 set :bundle_without, %w{development test doc}.join(' ')
 set :shared_directories,  %w(log)
 set :shared_files, %w()
-set :linked_files, ['config/application.yml', 'config/role_map.yml']
+set :linked_files, []
 server fetch(:domain), user: fetch(:user), roles: %w{web app db}
