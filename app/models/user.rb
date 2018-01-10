@@ -22,4 +22,8 @@ class User < ApplicationRecord
   def to_s
     email
   end
+
+  # @todo Implement cas_extra_attributes= against production type services
+  # @see https://github.com/nbudin/devise_cas_authenticatable#extra-attributes
+  def cas_extra_attributes=(extra_attributes); end
 end

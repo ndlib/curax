@@ -12,6 +12,7 @@ Figaro.require_keys(
   'application_database_name',
   'blacklight_adapter',
   'cable_adapter',
+  'cas_base_url',
   'devise_secret_key',
   'fedora_base_path',
   'fedora_password',
