@@ -8,6 +8,7 @@ end
 gem 'capistrano-bundler'
 gem 'capistrano', '~> 3.5.0'
 gem 'coffee-rails', '~> 4.2'
+gem 'devise_cas_authenticatable'
 gem 'devise-guests', '~> 0.6'
 gem 'devise'
 gem 'figaro'
