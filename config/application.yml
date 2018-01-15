@@ -45,6 +45,10 @@ development:
   application_database_host: localhost
   blacklight_adapter: solr
   cable_adapter: async
+  cas_base_url: https://cas.library.nd.edu/cas
+  cas_validate_url: https://cas.library.nd.edu/cas/serviceValidate
+  cas_destination_url: "http://localhost:3000"
+  cas_follow_url: "http://localhost:3000"
   devise_secret_key: b7adb179eac5f12b64c17a94f53a5819488ad2e190bbac281880501e0a5e3076548ad9a7e689680f333864242ee893eb986f870b432601ca3f52da6e6e435f54
   fedora_base_path: /dev
   fedora_password: fedoraAdmin
@@ -60,6 +64,10 @@ test:
   application_database_host: localhost
   blacklight_adapter: solr
   cable_adapter: async
+  cas_base_url: https://cas.library.nd.edu/cas
+  cas_validate_url: https://cas.library.nd.edu/cas/serviceValidate
+  cas_destination_url: "http://localhost:3000"
+  cas_follow_url: "http://localhost:3000"
   devise_secret_key: b7adb179eac5f12b64c17a94f53a5819488ad2e190bbac281880501e0a5e3076548ad9a7e689680f333864242ee893eb986f870b432601ca3f52da6e6e435f54
   fedora_base_path: /dev
   fedora_password: fedoraAdmin
