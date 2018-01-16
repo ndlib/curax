@@ -24,6 +24,7 @@ class User < ApplicationRecord
   end
 
   # @todo Implement cas_extra_attributes= against production type services
+  # Based on tests there are no additional attributes returned via CAS
   # @see https://github.com/nbudin/devise_cas_authenticatable#extra-attributes
   def cas_extra_attributes=(extra_attributes); end
 end
