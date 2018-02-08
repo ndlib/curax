@@ -17,7 +17,7 @@ set :branch, ENV['BRANCH_NAME'] || 'master'
 set :rails_env, 'staging'
 set :deploy_to, '/home/app/curax'
 set :user,      'app'
-set :domain,    fetch(:host, 'testlibnd-curax-dev.library.nd.edu')
+set :domain,    fetch(:host, 'curax-build.library.nd.edu')
 set :bundle_without, %w{development test doc}.join(' ')
 set :shared_directories,  %w(log)
 set :shared_files, %w()
